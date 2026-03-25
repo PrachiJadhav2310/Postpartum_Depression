@@ -1,0 +1,16 @@
+# Your Corrected Supabase Connection String
+
+## Copy this to your server/.env file:
+
+DB_URL=postgresql://postgres.apbkobhfnmcqqzqeeqss:Prachi%402310@aws-0-ap-south-1.pooler.supabase.com:5432/postgres
+
+## What was fixed:
+- ✅ Password URL-encoded: Prachi@2310 → Prachi%402310
+- ✅ Region set: ap-south-1
+- ✅ Protocol: postgresql:// (standard format)
+- ✅ Using connection pooler (IPv4-compatible)
+
+## Test the connection:
+1. Update server/.env with the connection string above
+2. Test hostname: ping aws-0-ap-south-1.pooler.supabase.com
+3. Restart server: npm run dev
