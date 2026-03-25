@@ -122,11 +122,16 @@ app.use('*', (req, res) => {
 const startServer = async () => {
   try {
     await connectDB();
+    // Ensure startup progress is visible in Render stdout logs.
+    console.log('✅ connectDB() succeeded');
     server.listen(PORT, () => {
       logger.info(`🚀 Server running on port ${PORT} in ${process.env.NODE_ENV} mode`);
       logger.info(`📊 Health check available at http://localhost:${PORT}/health`);
     });
   } catch (error) {
+    // Render may not show winston file logs; always print the error to stdout/stderr.
+    console.error('❌ Startup error:', error);
+    console.error('DB_URL set?', Boolean(process.env.DB_URL));
     logger.error('Failed to start server:', error);
     process.exit(1);
   }
