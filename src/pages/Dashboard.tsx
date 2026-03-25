@@ -1153,7 +1153,6 @@ const Dashboard: React.FC<DashboardProps> = ({ user }) => {
                   Start tracking to see your data
                 </p>
               )}
-              <p className="text-xs mt-2 underline text-gray-600">{action.label}</p>
             </button>
           )})
         ) : (
